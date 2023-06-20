@@ -1,3 +1,4 @@
+export const ROUTE_PROFILE = '/'
 export const ROUTE_FUELS = '/fuels';
 export const ROUTE_EMPLOYEES = '/employees';
 export const ROUTE_ROAD = '/road';
@@ -7,4 +8,5 @@ export const ROUTE_CARS = '/cars';
 export const ROUTE_INVOICES = '/invoices';
 export const ROUTE_SUPPLIERS = '/suppliers';
 export const ROUTE_EXPENSES = '/expenses';
-export const ROUTE_SIGN_IN = '/sign-in';
+export const ROUTE_SIGN_IN = '/';
+export const ROUTE_ERROR = '*';

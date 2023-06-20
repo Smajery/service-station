@@ -1,14 +1,26 @@
 import AppRouter from '../AppRouter';
-import styles from './Main.module.css'
+import Menu from 'components/menu/Menu';
+import styles from './Main.module.css';
 
 const Main = () => {
-    return (
-        <main className={styles.main}>
-            <div className={styles.container}>
-                <AppRouter />
-            </div>
-        </main>
-    );
+    const role = '';
+
+    {
+        return role !== '' ? (
+            <main className={styles.main}>
+                <Menu />
+                <div className={styles.rightBar}>
+                    <AppRouter />
+                </div>
+            </main>
+        ) : (
+            <main className={styles.main}>
+                <div className={styles.content}>
+                    <AppRouter />
+                </div>
+            </main>
+        );
+    }
 };
 
 export default Main;

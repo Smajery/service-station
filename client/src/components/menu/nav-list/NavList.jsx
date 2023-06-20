@@ -3,7 +3,7 @@ import {useLocation, useNavigate} from 'react-router-dom';
 
 import styles from './NavList.module.css';
 import {checkArr} from 'utils/check-arr';
-import {adminPaths, attendantPaths, driverPaths, managerPaths, userPaths} from 'utils/nav-paths';
+import {adminPaths, attendantPaths, driverPaths, managerPaths} from 'utils/nav-paths';
 
 const NavList = () => {
     const role = '';
@@ -77,18 +77,9 @@ const NavList = () => {
             );
         default:
             return (
-                <ul>
-                    {checkArr(userPaths) && userPaths.map((path) => (
-                        <li key={path.path}
-                            onClick={() => navigate(path.path)}
-                            className={`${styles.navItem}`}
-                        >
-                            <p className={`${styles.navItem__text} ${currentPath === path.path && styles.active}`}>
-                                {path.title}
-                            </p>
-                        </li>
-                    ))}
-                </ul>
+                <div>
+                    This user has insufficient rights
+                </div>
             );
     }
 };
