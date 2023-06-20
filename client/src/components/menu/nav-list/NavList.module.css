@@ -1,0 +1,17 @@
+.navList {
+    display: flex;
+    flex-direction: column;
+}
+
+.navItem {
+    cursor: pointer;
+}
+
+.navItem__text {
+    padding: 5px 10px;
+}
+
+.navItem__text.active,
+.navItem__text:hover {
+    text-decoration: underline;
+}
