@@ -6,7 +6,7 @@ import {checkArr} from 'utils/check-arr';
 import {adminPaths, attendantPaths, driverPaths, managerPaths} from 'utils/nav-paths';
 
 const NavList = () => {
-    const role = 'ATTENDANT';
+    const role = '';
 
     const navigate = useNavigate();
     const location = useLocation();
@@ -77,13 +77,9 @@ const NavList = () => {
             );
         default:
             return (
-                <ul>
-                    <li>
-                        <p>
-                            Ви не авторизовані
-                        </p>
-                    </li>
-                </ul>
+                <div>
+                    This user has insufficient rights
+                </div>
             );
     }
 };
