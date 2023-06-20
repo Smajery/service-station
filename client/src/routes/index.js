@@ -1,11 +1,14 @@
 import {
     ROUTE_CARS,
-    ROUTE_EMPLOYEES, ROUTE_EXPENSES,
+    ROUTE_EMPLOYEES,
+    ROUTE_EXPENSES,
     ROUTE_FUELS,
     ROUTE_INVOICES,
     ROUTE_REFUELING,
     ROUTE_ROAD,
-    ROUTE_STATISTICS, ROUTE_SUPPLIERS
+    ROUTE_SIGN_IN,
+    ROUTE_STATISTICS,
+    ROUTE_SUPPLIERS
 } from 'utils/paths';
 
 import FuelsPage from 'pages/fuels/Fuels';
@@ -17,6 +20,7 @@ import CarsPage from '../pages/cars/Cars';
 import InvoicesPage from '../pages/invoices/Invoices';
 import SuppliersPage from '../pages/suppliers/Suppliers';
 import ExpensesPage from '../pages/expenses/Expenses';
+import SignInPage from '../pages/sign-in/SignIn';
 
 export const adminRoutes = [
     {path: ROUTE_FUELS, component: FuelsPage},
@@ -41,3 +45,7 @@ export const driverRoutes  = [
     {path: ROUTE_ROAD, component: RoadPage},
     {path: ROUTE_EXPENSES, component: ExpensesPage}
 ];
+
+export const userRoutes = [
+    {path: ROUTE_SIGN_IN, component: SignInPage}
+]

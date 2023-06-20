@@ -1,9 +1,9 @@
 import {Route, Routes} from 'react-router-dom';
 
-import {adminRoutes, attendantRoutes, managerRoutes, driverRoutes} from 'routes';
+import {adminRoutes, attendantRoutes, managerRoutes, driverRoutes, userRoutes} from 'routes';
 
 const AppRouter = () => {
-    const role = 'ATTENDANT';
+    const role = '';
 
     switch (role) {
         case 'ADMIN':
@@ -21,11 +21,11 @@ const AppRouter = () => {
         case 'ATTENDANT':
             return (
                 <Routes>
-                    {attendantRoutes.map((admin) => (
+                    {attendantRoutes.map((attendant) => (
                         <Route
-                            key={admin.path}
-                            path={admin.path}
-                            element={<admin.component />}
+                            key={attendant.path}
+                            path={attendant.path}
+                            element={<attendant.component />}
                         />
                     ))}
                 </Routes>
@@ -33,11 +33,11 @@ const AppRouter = () => {
         case 'MANAGER':
             return (
                 <Routes>
-                    {managerRoutes.map((admin) => (
+                    {managerRoutes.map((manager) => (
                         <Route
-                            key={admin.path}
-                            path={admin.path}
-                            element={<admin.component />}
+                            key={manager.path}
+                            path={manager.path}
+                            element={<manager.component />}
                         />
                     ))}
                 </Routes>
@@ -45,20 +45,26 @@ const AppRouter = () => {
         case 'DRIVER':
             return (
                 <Routes>
-                    {driverRoutes.map((admin) => (
+                    {driverRoutes.map((driver) => (
                         <Route
-                            key={admin.path}
-                            path={admin.path}
-                            element={<admin.component />}
+                            key={driver.path}
+                            path={driver.path}
+                            element={<driver.component />}
                         />
                     ))}
                 </Routes>
             );
         default:
             return (
-                <div>
-                    Ви не авторизовані
-                </div>
+                <Routes>
+                    {userRoutes.map((user) => (
+                        <Route
+                            key={user.path}
+                            path={user.path}
+                            element={<user.component />}
+                        />
+                    ))}
+                </Routes>
             );
     }
 };

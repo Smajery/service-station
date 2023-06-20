@@ -7,3 +7,4 @@ export const ROUTE_CARS = '/cars';
 export const ROUTE_INVOICES = '/invoices';
 export const ROUTE_SUPPLIERS = '/suppliers';
 export const ROUTE_EXPENSES = '/expenses';
+export const ROUTE_SIGN_IN = '/sign-in';

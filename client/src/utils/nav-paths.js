@@ -20,3 +20,7 @@ export const driverPaths = [
     {title: 'Road', path: '/road'},
     {title: 'Expenses', path: '/expenses'},
 ];
+
+export const userPaths = [
+    {title: 'Sign in', path: '/sign-in'},
+];
