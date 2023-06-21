@@ -1,0 +1,10 @@
+/node_modules
+/client/node_modules
+/.idea
+/client/src/.idea/
+/client/build/
+npm-debug.log
+.DS_Store
+.env
+
+
