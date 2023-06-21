@@ -1,0 +1,13 @@
+.menu {
+    padding: 20px;
+    width: calc(50% - 400px);
+    display: flex;
+    background-color: #000000;
+    color: #FFFFFF;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px 0;
+}

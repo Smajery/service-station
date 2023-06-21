@@ -1,0 +1,16 @@
+.main {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.content {
+    width: 100%;
+    display: flex;
+}
+
+.rightBar {
+    padding: 20px;
+    width: calc(50% + 400px);
+    display: flex;
+}
