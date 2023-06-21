@@ -2,6 +2,7 @@
     width: 100%;
     display: flex;
     justify-content: space-between;
+    background-color: #e8e8e8;
 }
 
 .content {

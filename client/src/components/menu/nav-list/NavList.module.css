@@ -5,13 +5,19 @@
 
 .navItem {
     cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.navItem__img {
+
 }
 
 .navItem__text {
-    padding: 5px 10px;
+    padding: 10px 10px;
 }
 
-.navItem__text.active,
-.navItem__text:hover {
+.navItem.active,
+.navItem:hover {
     text-decoration: underline;
 }

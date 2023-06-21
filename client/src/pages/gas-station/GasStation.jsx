@@ -1,4 +1,4 @@
-const RefuelingPage = () => {
+const GasStationPage = () => {
     return (
         <div>
             Refueling
@@ -6,4 +6,4 @@ const RefuelingPage = () => {
     );
 };
 
-export default RefuelingPage;
+export default GasStationPage;
