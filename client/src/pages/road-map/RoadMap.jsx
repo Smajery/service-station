@@ -1,4 +1,4 @@
-const RoadPage = () => {
+const RoadMapPage = () => {
     return (
         <div>
             Road
@@ -6,4 +6,4 @@ const RoadPage = () => {
     );
 };
 
-export default RoadPage;
+export default RoadMapPage;

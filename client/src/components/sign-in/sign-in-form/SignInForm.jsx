@@ -4,9 +4,11 @@ import {useNavigate} from 'react-router-dom';
 import styles from './SignInForm.module.css';
 import {emailPattern, passwordPattern} from 'utils/patterns';
 import {ROUTE_PROFILE} from 'utils/paths';
+import {useActions} from '../../../hooks/UseActions';
 
 const SignInForm = () => {
     const navigate = useNavigate();
+    const {si} = useActions()
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');

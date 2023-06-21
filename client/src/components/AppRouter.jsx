@@ -3,9 +3,13 @@ import {Route, Routes} from 'react-router-dom';
 import {adminRoutes, attendantRoutes, managerRoutes, driverRoutes, userRoutes} from 'routes';
 
 const AppRouter = () => {
-    const role = '';
+    const currentUser = {
+        role: 'ADMIN'
+    }
+    localStorage.setItem('user', JSON.stringify(currentUser))
+    const user = JSON.parse(localStorage.getItem('user'))
 
-    switch (role) {
+    switch (user.role) {
         case 'ADMIN':
             return (
                 <Routes>

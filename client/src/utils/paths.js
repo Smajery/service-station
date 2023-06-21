@@ -1,9 +1,9 @@
 export const ROUTE_PROFILE = '/'
-export const ROUTE_FUELS = '/fuels';
+export const ROUTE_GAS = '/gas';
 export const ROUTE_EMPLOYEES = '/employees';
-export const ROUTE_ROAD = '/road';
+export const ROUTE_ROAD_MAP = '/road-map-map';
 export const ROUTE_STATISTICS = '/statistics';
-export const ROUTE_REFUELING = '/refueling';
+export const ROUTE_GAS_STATION = '/gas-station';
 export const ROUTE_CARS = '/cars';
 export const ROUTE_INVOICES = '/invoices';
 export const ROUTE_SUPPLIERS = '/suppliers';
