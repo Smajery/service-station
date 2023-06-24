@@ -3,9 +3,9 @@ const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
 const {authPool, adminPool} = require("../db");
 
-const generateJwt = (id, email, role) => {
+const generateJwt = (id, email, role, name) => {
     return jwt.sign(
-        {id, email, role},
+        {id, email, role, name},
         process.env.SECRET_KEY,
         {expiresIn: '24h'}
     )
@@ -39,7 +39,7 @@ class UserController {
     async registration(req, res, next) {
 
         try {
-            const { email, password } = req.body;
+            const { email, password, name } = req.body;
             if (!email || !password) {
                 return next(ApiError.badRequest('Incorrect email or password'));
             }
@@ -61,8 +61,8 @@ class UserController {
 
                 // Create a new user
                 const insertQuery =
-                    'INSERT INTO users (email, password) VALUES ($1, $2) RETURNING id, role';
-                const insertValues = [email, hashPassword];
+                    'INSERT INTO users (email, password, name) VALUES ($1, $2, $3) RETURNING id, role';
+                const insertValues = [email, hashPassword, name];
                 const insertResult = await client.query(insertQuery, insertValues);
                 const userId = insertResult.rows[0].id;
                 const role = insertResult.rows[0].role;
@@ -101,7 +101,7 @@ class UserController {
                     return next(ApiError.internal('Incorrect password'));
                 }
 
-                const token = generateJwt(user.id, email, user.role);
+                const token = generateJwt(user.id, email, user.role, user.name);
 
                 res.json({ token });
             } finally {

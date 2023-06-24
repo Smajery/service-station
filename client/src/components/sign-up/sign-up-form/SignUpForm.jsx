@@ -1,22 +1,21 @@
 import {useState} from 'react';
 import {useNavigate} from 'react-router-dom';
-import {useActions} from 'hooks/UseActions';
-import jwtDecode from 'jwt-decode';
 
-import styles from './SignInForm.module.css';
-import {emailPattern, passwordPattern} from 'utils/patterns';
-import {ROUTE_PROFILE} from 'utils/routes';
-import {login} from 'api/auth';
+import styles from './SignUpForm.module.css';
+import {emailPattern, namePattern, passwordPattern} from 'utils/patterns';
+import {ROUTE_SIGN_IN} from 'utils/routes';
+import {registration} from '../../../api/auth';
 
-const SignInForm = () => {
+const SignUpForm = () => {
     const navigate = useNavigate();
-    const {setUser} = useActions()
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [name, setName] = useState('');
 
     const [emailError, setEmailError] = useState('');
     const [passwordError, setPasswordError] = useState('');
+    const [nameError, setNameError] = useState('');
 
     const handleEmailChange = (e) => {
         const emailInput = e.target.value;
@@ -48,12 +47,33 @@ const SignInForm = () => {
         }, 1000);
     };
 
+    const handleNameChange = (e) => {
+        const nameInput = e.target.value;
+        let nameErrorText = '';
+        if (nameInput === '') {
+            nameErrorText = 'Введіть ПІБ';
+        } else if (!namePattern.test(nameInput)) {
+            nameErrorText = 'Невірний ПІБ';
+        }
+
+        setName(nameInput);
+        setTimeout(() => {
+            setNameError(nameErrorText);
+        }, 1000);
+    };
+
     const handleSubmit = (e) => {
         e.preventDefault();
 
         let emailErrorText = '';
         let passwordErrorText = '';
+        let nameErrorText = '';
 
+        if (name === '') {
+            nameErrorText = 'Введіть ПІБ';
+        } else if (!namePattern.test(name)) {
+            nameErrorText = 'Невірний ПІБ'
+        }
         if (email === '') {
             emailErrorText = 'Введіть електронну пошту';
         } else if (!emailPattern.test(email)) {
@@ -68,30 +88,46 @@ const SignInForm = () => {
         setEmailError(emailErrorText);
         setPasswordError(passwordErrorText);
 
-        if (emailErrorText === '' && passwordErrorText === '') {
-            login(email, password)
+        if (emailErrorText === '' && passwordErrorText === '' && nameErrorText === '') {
+            registration(email, password, name)
                 .then(data => {
-                    const user = jwtDecode(data.token);
-                    localStorage.setItem('token', data.token);
-                    localStorage.setItem('user', JSON.stringify(user));
-                    setUser(user)
-                    navigate(ROUTE_PROFILE)
+
                 })
                 .catch(e => {
                     console.error(e)
-                    alert('Неправильна електронна пошта або пароль')
+                    alert('Щось пішло не так')
                 })
+                .finally(() => {
+
+                })
+
+            navigate(ROUTE_SIGN_IN)
         }
     };
 
 
     return (
         <form onSubmit={handleSubmit}
-              className={styles.signInForm}
+              className={styles.signUpForm}
         >
             <h2>
-                Вхід
+                Реєстрація
             </h2>
+            <input type='text'
+                   placeholder='ПІБ'
+                   value={name}
+                   onChange={handleNameChange}
+                   className={
+                       `${styles.inputItem} ${nameError !== '' && styles.inputItem_error}`
+                   }
+            />
+            {nameError !== '' &&
+                <div className={styles.errorContainer}>
+                    <p className={styles.errorText}>
+                        {nameError}
+                    </p>
+                </div>
+            }
             <input type='text'
                    placeholder='Е-пошта'
                    value={email}
@@ -122,17 +158,17 @@ const SignInForm = () => {
                     </p>
                 </div>
             }
-            <button className={styles.signInBtn}
+            <button className={styles.signUpBtn}
                     type='submit'
             >
-                Увійти
+                Зареєструватися
             </button>
-            <div className={styles.askSignUpContainer}>
-                <p className={styles.askSignUpText}>
-                    Немає облікового запису?
+            <div className={styles.askSignInContainer}>
+                <p className={styles.askSignInText}>
+                    У вас є обліковий запис?
                     <span>
-                        <a href='/sign-up'>
-                            Зареєструватися
+                        <a href='/'>
+                            Увійти
                         </a>
                     </span>
                 </p>
@@ -141,4 +177,4 @@ const SignInForm = () => {
     );
 };
 
-export default SignInForm;
+export default SignUpForm;

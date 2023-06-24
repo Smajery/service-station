@@ -1,15 +1,13 @@
+import {useSelector} from 'react-redux';
+
 import AppRouter from '../AppRouter';
 import Menu from 'components/menu/Menu';
 import styles from './Main.module.css';
 
 const Main = () => {
-    const currentUser = {
-        role: 'ADMIN'
-    }
-    localStorage.setItem('user', JSON.stringify(currentUser))
-    const user = JSON.parse(localStorage.getItem('user'))
+    const {user} = useSelector(state => state.authReducer)
 
-    return user && user.role !== '' ? (
+    return Object.keys(user).length !== 0 ? (
         <main className={styles.main}>
             <Menu />
             <div className={styles.rightBar}>

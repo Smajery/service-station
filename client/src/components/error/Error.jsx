@@ -1,7 +1,11 @@
+import styles from './Error.module.css';
+
 const Error = () => {
     return (
-        <div>
-           Page not found. 404.
+        <div className={styles.errorPage}>
+            <div className={styles.content}>
+                Сторінка не знайдена. Сталася помилка 404.
+            </div>
         </div>
     );
 };
