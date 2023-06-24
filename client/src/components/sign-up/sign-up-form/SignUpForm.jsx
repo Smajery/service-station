@@ -2,7 +2,7 @@ import {useState} from 'react';
 import {useNavigate} from 'react-router-dom';
 
 import styles from './SignUpForm.module.css';
-import {emailPattern, passwordPattern} from 'utils/patterns';
+import {emailPattern, namePattern, passwordPattern} from 'utils/patterns';
 import {ROUTE_SIGN_IN} from 'utils/routes';
 import {registration} from '../../../api/auth';
 
@@ -11,9 +11,11 @@ const SignUpForm = () => {
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [name, setName] = useState('');
 
     const [emailError, setEmailError] = useState('');
     const [passwordError, setPasswordError] = useState('');
+    const [nameError, setNameError] = useState('');
 
     const handleEmailChange = (e) => {
         const emailInput = e.target.value;
@@ -45,12 +47,33 @@ const SignUpForm = () => {
         }, 1000);
     };
 
+    const handleNameChange = (e) => {
+        const nameInput = e.target.value;
+        let nameErrorText = '';
+        if (nameInput === '') {
+            nameErrorText = 'Введіть ПІБ';
+        } else if (!namePattern.test(nameInput)) {
+            nameErrorText = 'Невірний ПІБ';
+        }
+
+        setName(nameInput);
+        setTimeout(() => {
+            setNameError(nameErrorText);
+        }, 1000);
+    };
+
     const handleSubmit = (e) => {
         e.preventDefault();
 
         let emailErrorText = '';
         let passwordErrorText = '';
+        let nameErrorText = '';
 
+        if (name === '') {
+            nameErrorText = 'Введіть ПІБ';
+        } else if (!namePattern.test(name)) {
+            nameErrorText = 'Невірний ПІБ'
+        }
         if (email === '') {
             emailErrorText = 'Введіть електронну пошту';
         } else if (!emailPattern.test(email)) {
@@ -65,8 +88,8 @@ const SignUpForm = () => {
         setEmailError(emailErrorText);
         setPasswordError(passwordErrorText);
 
-        if (emailErrorText === '' && passwordErrorText === '') {
-            registration(email, password)
+        if (emailErrorText === '' && passwordErrorText === '' && nameErrorText === '') {
+            registration(email, password, name)
                 .then(data => {
 
                 })
@@ -90,6 +113,21 @@ const SignUpForm = () => {
             <h2>
                 Реєстрація
             </h2>
+            <input type='text'
+                   placeholder='ПІБ'
+                   value={name}
+                   onChange={handleNameChange}
+                   className={
+                       `${styles.inputItem} ${nameError !== '' && styles.inputItem_error}`
+                   }
+            />
+            {nameError !== '' &&
+                <div className={styles.errorContainer}>
+                    <p className={styles.errorText}>
+                        {nameError}
+                    </p>
+                </div>
+            }
             <input type='text'
                    placeholder='Е-пошта'
                    value={email}

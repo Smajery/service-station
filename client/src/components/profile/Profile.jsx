@@ -1,19 +1,21 @@
 import React from 'react';
+import {useSelector} from 'react-redux';
+
 import styles from './Profile.module.css';
 
 const Profile = () => {
-    const user = JSON.parse(localStorage.getItem('user'));
+    const {user} = useSelector(state => state.authReducer)
 
     return (
         <div className={styles.profilePage}>
             <div className={styles.content}>
-                {(user && user.role !== null) ? (
+                {(Object.keys(user).length !== 0 && user.role !== null) ? (
                     <p>
-
+                        {user.name}, ваша роль: {user.role}
                     </p>
                 ) : (
                     <p>
-                        Вам ще не видали роль, будь ласка, зверніться до адміністратора.
+                        {user.name}, Вам ще не видали роль, будь ласка, зверніться до адміністратора.
                     </p>
                 )}
             </div>

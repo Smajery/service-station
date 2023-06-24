@@ -1,7 +1,7 @@
 import {$authHost, $host} from "./index"
 
-export const registration = async (email, password) => {
-    const {data} = await $host.post('user/registration', {email, password})
+export const registration = async (email, password, name) => {
+    const {data} = await $host.post('user/registration', {email, password, name})
     return data
 }
 
