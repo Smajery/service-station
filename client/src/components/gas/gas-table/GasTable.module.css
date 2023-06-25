@@ -1,0 +1,11 @@
+.gasTable {
+    display: flex;
+    flex-direction: column;
+}
+
+.emptyTable {
+    padding: 5px 20px;
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid black;
+}

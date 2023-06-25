@@ -6,6 +6,7 @@ const checkRole = require("../middleware/CheckRoleMiddleware");
 
 router.post('/refueling', checkRole(['ATTENDANT']), carController.refueling)
 router.get('/top-consumers', checkRole(['ATTENDANT']), carController.topConsumers)
+router.get('/', checkRole(['ADMIN']), carController.topConsumers)
 
 
 module.exports = router

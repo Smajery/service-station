@@ -1,0 +1,16 @@
+.employeesPage {
+    width: 100%;
+    display: flex;
+}
+
+.employeesPage > .content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.employeesTableContainer {
+    display: flex;
+    flex-direction: column;
+}

@@ -1,0 +1,44 @@
+.employeesTable {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    background-color: #FFFFFF;
+    border-bottom-width: 0;
+}
+
+.employeesTable thead {
+    border-bottom: 1px solid black;
+}
+
+.employeesTableTitle {
+    padding: 10px 20px;
+    display: flex;
+    gap: 0 20px;
+}
+
+.employeesTableTitle > th {
+    display: flex;
+}
+
+.employeesTableTitle > .name {
+    width: 300px;
+}
+
+.employeesTableTitle > .email {
+    width: 200px;
+}
+
+.employeesTableTitle > .role {
+    width: 117px;
+}
+
+.employeesTableTitle > .button {
+    width: 85px;
+}
+
+.emptyTable {
+    padding: 5px 20px;
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid black;
+}

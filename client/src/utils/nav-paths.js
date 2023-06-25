@@ -11,7 +11,7 @@ import expensesImg from 'static/icons/expenses.svg';
 export const adminPaths = [
     {title: 'Паливо', path: '/gas', icon: gasImg},
     {title: 'Співробітники', path: '/employees', icon: employeesImg},
-    {title: 'Дорожня карта', path: '/road-map-map', icon: roadMapImg},
+    {title: 'Дорожня карта', path: '/road-map', icon: roadMapImg},
     {title: 'Статистика', path: '/statistics', icon: statisticsImg},
 ];
 
@@ -27,6 +27,6 @@ export const managerPaths = [
 ];
 
 export const driverPaths = [
-    {title: 'Дорожня карта', path: '/road-map-map', icon: roadMapImg},
+    {title: 'Дорожня карта', path: '/road-map', icon: roadMapImg},
     {title: 'Витрати', path: '/expenses', icon: expensesImg},
 ];

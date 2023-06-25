@@ -1,0 +1,123 @@
+.roadMapPage {
+    width: 100%;
+    display: flex;
+}
+
+.roadMapPage > .content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.roadMapTableContainer {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    border-bottom-width: 0;
+    background-color: #FFFFFF;
+}
+
+.datePickerContainer {
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid black;
+}
+
+.datePickerContainer > .labelContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.labelContainer > label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.labelContainer input {
+    width: 135px;
+    padding: 0 2px ;
+}
+
+.roadMapTableTitle {
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    gap: 0 20px;
+    border-bottom: 1px solid black;
+}
+
+.roadMapTableTitle > div {
+    display: flex;
+}
+
+.roadMapTableTitle > div > p {
+    font-weight: bold;
+}
+
+.roadMapTableTitle > .owner {
+    width: 300px;
+}
+
+.roadMapTableTitle > .carType {
+    width: 150px;
+}
+
+.roadMapTableTitle > .date {
+    width: 130px;
+}
+
+.roadMapTableTitle > .address {
+    width: 200px;
+}
+
+.roadMapTableTitle > .button {
+    width: 85px;
+}
+
+.btnContainer {
+    width: 85px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.confirmBtn,
+.cancelBtn {
+    width: 35px;
+    height: 25px;
+}
+
+.addGasBtn {
+    width: 85px;
+    height: 25px;
+}
+
+.addRoadMapForm {
+    padding: 5px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid black;
+    gap: 0 20px;
+}
+
+.addRoadMapForm input {
+    padding: 0 2px;
+}
+
+.addRoadMapForm > .selectOwner {
+    width: 300px;
+}
+
+.addRoadMapForm > .selectCarType {
+    width: 150px;
+}
+
+.addRoadMapForm > .inputAddress {
+    width: 200px;
+}
+
+.inputDateContainer input {
+    width: 130px;
+}

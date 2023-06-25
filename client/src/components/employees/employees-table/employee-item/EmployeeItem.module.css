@@ -1,0 +1,40 @@
+.employeeItem {
+    padding: 5px 20px;
+    display: flex;
+    align-items: center;
+    gap: 0 20px;
+    border-bottom: 1px solid black;
+}
+
+.employeeItem > td {
+    display: flex;
+}
+
+.employeeItem > .name {
+    width: 300px;
+}
+
+.employeeItem > .email {
+    width: 200px;
+}
+
+.employeeItem > .role {
+    width: 117px;
+}
+
+.btnContainer {
+    width: 85px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.cancelBtn,
+.confirmBtn {
+    width: 35px;
+    height: 25px;
+}
+
+.updateRoleBtn {
+    width: 85px;
+    height: 25px;
+}
