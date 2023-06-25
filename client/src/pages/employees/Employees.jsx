@@ -1,8 +1,8 @@
+import Employees from 'components/employees/Employees';
+
 const EmployeesPage = () => {
     return (
-        <div>
-            Employees
-        </div>
+        <Employees />
     );
 };
 

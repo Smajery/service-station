@@ -1,0 +1,28 @@
+.roadMapItem {
+    display: flex;
+    border-bottom: 1px solid black;
+    align-items: center;
+    gap: 0 20px;
+}
+
+.roadMapItem > td {
+    padding: 5px 20px;
+    display: flex;
+}
+
+.roadMapItem > .owner {
+    width: 300px;
+}
+
+.roadMapItem > .carType {
+    width: 150px;
+}
+
+.roadMapItem > .date {
+    width: 130px;
+}
+
+.roadMapItem > .address {
+    width: 200px;
+}
+

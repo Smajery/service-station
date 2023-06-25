@@ -1,8 +1,8 @@
+import RoadMap from 'components/road-map/RoadMap';
+
 const RoadMapPage = () => {
     return (
-        <div>
-            Road
-        </div>
+        <RoadMap />
     );
 };
 

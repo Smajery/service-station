@@ -19,7 +19,7 @@ class TripController {
     async getAll(req, res, next) {
 
         const {startDate, endDate} = req.query;
-        adminPool.query('SELECT * FROM trips_view WHERE date > $1 and date < $2', [startDate, endDate], (error, results) => {
+        adminPool.query('SELECT * FROM trips_view WHERE date >= $1 and date <= $2', [startDate, endDate], (error, results) => {
             if (error) {
                 return next(ApiError.badRequest(error.message))
             }

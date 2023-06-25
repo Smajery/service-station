@@ -87,6 +87,7 @@ const SignUpForm = () => {
 
         setEmailError(emailErrorText);
         setPasswordError(passwordErrorText);
+        setNameError(nameErrorText)
 
         if (emailErrorText === '' && passwordErrorText === '' && nameErrorText === '') {
             registration(email, password, name)

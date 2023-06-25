@@ -1,4 +1,4 @@
-const {attendantPool} = require('../db')
+const {attendantPool, adminPool} = require('../db')
 const ApiError = require("../error/ApiError");
 
 class CarController {
@@ -36,6 +36,15 @@ class CarController {
 
     async topConsumers(req, res, next) {
         attendantPool.query('SELECT * FROM fuel_consumers', (error, results) => {
+            if (error) {
+                return next(ApiError.badRequest(error.message))
+            }
+            res.json(results.rows)
+        })
+    }
+
+    async getAll(req, res, next) {
+        adminPool.query('SELECT * FROM cars', (error, results) => {
             if (error) {
                 return next(ApiError.badRequest(error.message))
             }
