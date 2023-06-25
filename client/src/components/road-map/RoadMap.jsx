@@ -18,6 +18,7 @@ const RoadMap = () => {
 
     const [startDate, setStartDate] = useState(Date.now);
     const [endDate, setEndDate] = useState(Date.now);
+    const maxDate = new Date()
 
     const [name, setName] = useState('');
     const [dateValue, setDateValue] = useState(Date.now);
@@ -25,6 +26,8 @@ const RoadMap = () => {
     const [address, setAddress] = useState('');
 
     const [nameError, setNameError] = useState('');
+    const [carTypeError, setCarTypeError] = useState('');
+    const [addressError, setAddressError] = useState('');
 
     const getFormattedDate = (date) => {
         return format(date, 'yyyy-MM-dd');
@@ -59,7 +62,15 @@ const RoadMap = () => {
         if (name === '') {
             nameErrorText = 'Виберіть власника';
         }
+        if (carType === '') {
+            carTypeErrorText = 'Виберіть машину';
+        }
+        if (address === '') {
+            addressErrorText = 'Введіть адресу'
+        }
         setNameError(nameErrorText);
+        setCarTypeError(carTypeErrorText);
+        setAddressError(addressErrorText);
 
         if (nameErrorText === '' && carTypeErrorText === '' && addressErrorText === '') {
             const formattedDate = getFormattedDate(dateValue)
@@ -117,7 +128,7 @@ const RoadMap = () => {
                 console.error(e)
                 alert('Щось пішло не так')
             })
-    })
+    }, [])
 
     return (
         <div className={styles.roadMapPage}>
@@ -129,6 +140,7 @@ const RoadMap = () => {
                             <DatePicker selected={startDate}
                                         onChange={handleStartDateChange}
                                         dateFormat='yyyy-MM-dd'
+                                        maxDate={maxDate}
 
                             />
                         </div>
@@ -137,6 +149,7 @@ const RoadMap = () => {
                             <DatePicker selected={endDate}
                                         onChange={handleEndDateChange}
                                         dateFormat='yyyy-MM-dd'
+                                        maxDate={maxDate}
                             />
                         </div>
                     </div>
@@ -159,7 +172,7 @@ const RoadMap = () => {
                     <form className={styles.addRoadMapForm}
                           onSubmit={handleSubmit}
                     >
-                        <select className={styles.selectOwner}
+                        <select className={`${styles.selectOwner} ${nameError !== '' && styles.error}`}
                                 value={name}
                                 onChange={e => setName(e.target.value)}
                                 disabled={!isEdit}
@@ -175,7 +188,7 @@ const RoadMap = () => {
                                 ))
                             )}
                         </select>
-                        <select className={styles.selectCarType}
+                        <select className={`${styles.selectCarType} ${carTypeError !== '' && styles.error}`}
                                 value={carType}
                                 onChange={e => setCarType(e.target.value)}
                                 disabled={!isEdit}
@@ -196,9 +209,10 @@ const RoadMap = () => {
                                         onChange={handleDateValueChange}
                                         dateFormat='yyyy-MM-dd'
                                         disabled
+                                        maxDate={maxDate}
                             />
                         </div>
-                        <input className={styles.inputAddress}
+                        <input className={`${styles.inputAddress} ${addressError !== '' && styles.error}`}
                                disabled={!isEdit}
                                value={address}
                                onChange={e => setAddress(e.target.value)}

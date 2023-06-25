@@ -1,0 +1,56 @@
+.statisticsPage {
+    width: 100%;
+    display: flex;
+}
+
+.statisticsPage > .content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.statisticsContainer {
+    display: flex;
+    flex-direction: column;
+    background-color: #FFFFFF;
+    border: 1px solid black;
+}
+.statisticsContainer > div {
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0 10px;
+}
+
+.statisticsTitleContainer {
+    margin: 0 auto;
+    display: flex;
+}
+
+.statisticsTitleContainer > p {
+    font-weight: bold;
+}
+
+.invoiceDateContainer {
+    background-color: #e8e8e8;
+}
+
+.popularFuelContainer {
+}
+
+.resentTripsContainer {
+    background-color: #e8e8e8;
+}
+
+.totalCarsContainer {
+}
+
+.totalInvoicesContainer {
+    background-color: #e8e8e8;
+}
+
+.totalTripsContainer {
+
+}
