@@ -48,6 +48,7 @@ const Gas = () => {
                         type: Number(type)
                     }
                     setGases([...gases, gas])
+                    handleCancel()
                 })
                 .catch(e => {
                     console.error(e)

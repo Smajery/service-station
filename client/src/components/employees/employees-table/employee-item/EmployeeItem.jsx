@@ -5,7 +5,7 @@ import {updateEmployeeRole} from 'api/user';
 
 const EmployeeItem = ({employee}) => {
 
-    const [role, setRole] = useState(employee.role);
+    const [role, setRole] = useState(String(employee.role));
     const [isEdit, setIsEdit] = useState(false);
 
     const handleCancel = () => {
@@ -16,7 +16,12 @@ const EmployeeItem = ({employee}) => {
     const handleUpdateRole = () => {
         updateEmployeeRole(employee.email, role)
             .then(() => {
-                alert(`Роль для ${employee.name} було змінено на ${role}`)
+                if (role === 'null' || role === '') {
+                    alert(`Роль для ${employee.name} була прибрана`)
+                } else {
+                    alert(`Роль для ${employee.name} було змінено на ${role}`)
+                }
+                setIsEdit(false)
             })
             .catch(e => {
                 console.error(e)
@@ -33,7 +38,7 @@ const EmployeeItem = ({employee}) => {
             >{employee.email}
             </td>
             <td className={styles.role}>
-                <select onChange={e => setRole(e.target.role)}
+                <select onChange={e => setRole(e.target.value)}
                         value={role}
                         disabled={!isEdit}
                 >
