@@ -104,6 +104,16 @@
 
 .addRoadMapForm input {
     padding: 0 2px;
+    height: 24px;
+}
+
+.addRoadMapForm select {
+    border-width: 2px;
+    border-style: inset;
+}
+
+.addRoadMapForm > .error {
+    border-color: #cf1d00;
 }
 
 .addRoadMapForm > .selectOwner {

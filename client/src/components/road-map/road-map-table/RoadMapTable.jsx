@@ -7,9 +7,9 @@ const RoadMapTable = ({roadMaps}) => {
         <table className={styles.roadMapTable}>
             <tbody>
             {checkArr(roadMaps) ? (
-                roadMaps.map((roadMap) => (
+                roadMaps.map((roadMap, index) => (
                     <RoadMapItem roadMap={roadMap}
-                                 key={roadMap.id}
+                                 key={index}
                     />
                 ))
             ) : (

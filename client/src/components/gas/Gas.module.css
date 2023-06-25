@@ -29,6 +29,7 @@
 
 .addGasForm > input {
     padding: 0 2px;
+    height: 24px;
 }
 
 .addGasForm > input.error {
