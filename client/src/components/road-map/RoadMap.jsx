@@ -13,14 +13,15 @@ import {getAllUser} from 'api/user';
 const RoadMap = () => {
     const [isEdit, setIsEdit] = useState(false);
     const [roadMaps, setRoadMaps] = useState([]);
-    const [cars, setCars] = useState([])
-    const [users, setUsers] = useState([])
+    const [cars, setCars] = useState([]);
+    const [users, setUsers] = useState([]);
 
     const [startDate, setStartDate] = useState(Date.now);
     const [endDate, setEndDate] = useState(Date.now);
-    const maxDate = new Date()
+    const maxDate = new Date();
 
     const [name, setName] = useState('');
+    const [fullName, setFullName] = useState('');
     const [dateValue, setDateValue] = useState(Date.now);
     const [carType, setCarType] = useState('');
     const [address, setAddress] = useState('');
@@ -52,6 +53,13 @@ const RoadMap = () => {
         setEndDate(date);
     };
 
+    const handleSelectChange = (e) => {
+        const selectedValue = e.target.value;
+        const [userId, userName] = selectedValue.split('-');
+        setName(userId);
+        setFullName(userName);
+    };
+
     const handleSubmit = (e) => {
         e.preventDefault();
 
@@ -66,30 +74,31 @@ const RoadMap = () => {
             carTypeErrorText = 'Виберіть машину';
         }
         if (address === '') {
-            addressErrorText = 'Введіть адресу'
+            addressErrorText = 'Введіть адресу';
         }
         setNameError(nameErrorText);
         setCarTypeError(carTypeErrorText);
         setAddressError(addressErrorText);
 
         if (nameErrorText === '' && carTypeErrorText === '' && addressErrorText === '') {
-            const formattedDate = getFormattedDate(dateValue)
+            const formattedDate = getFormattedDate(dateValue);
 
             addRoadMap(name, carType, formattedDate, address)
                 .then(() => {
                     const newRoadMap = {
                         id: Date.now,
-                        user_id: name,
+                        driver: fullName,
                         license_plate: carType,
                         date: formattedDate,
                         destination_address: address
-                    }
-                    setRoadMaps([...roadMaps, newRoadMap])
+                    };
+                    setRoadMaps([...roadMaps, newRoadMap]);
+                    handleCancel();
                 })
                 .catch(e => {
-                    console.error(e)
-                    alert('Щось пішло не так')
-                })
+                    console.error(e);
+                    alert('Щось пішло не так');
+                });
         }
 
     };
@@ -111,24 +120,24 @@ const RoadMap = () => {
     useEffect(() => {
         getAllCars()
             .then(data => {
-                setCars(data)
+                setCars(data);
             })
             .catch(e => {
-                console.log(e)
-                alert('Щось пішло не так')
-            })
-    }, [])
+                console.log(e);
+                alert('Щось пішло не так');
+            });
+    }, []);
 
     useEffect(() => {
         getAllUser()
             .then(data => {
-                setUsers(data)
+                setUsers(data);
             })
             .catch(e => {
-                console.error(e)
-                alert('Щось пішло не так')
-            })
-    }, [])
+                console.error(e);
+                alert('Щось пішло не так');
+            });
+    }, []);
 
     return (
         <div className={styles.roadMapPage}>
@@ -174,13 +183,13 @@ const RoadMap = () => {
                     >
                         <select className={`${styles.selectOwner} ${nameError !== '' && styles.error}`}
                                 value={name}
-                                onChange={e => setName(e.target.value)}
+                                onChange={handleSelectChange}
                                 disabled={!isEdit}
                         >
                             <option value=''>Виберіть</option>
                             {checkArr(users) && (
-                                users.filter(user => user.role === "DRIVER").map((user) => (
-                                    <option value={user.id}
+                                users.filter(user => user.role === 'DRIVER').map((user) => (
+                                    <option value={`${user.id}-${user.name}`}
                                             key={user.id}
                                     >
                                         {user.name}
