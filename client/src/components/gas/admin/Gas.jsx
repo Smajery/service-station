@@ -2,7 +2,7 @@ import {useEffect, useState} from 'react';
 
 import styles from './Gas.module.css';
 import GasTable from './gas-table/GasTable';
-import {addGas, getAllGas} from '../../api/gas';
+import {addGas, getAllGas} from 'api/gas';
 
 const Gas = () => {
     const [gases, setGases] = useState([]);

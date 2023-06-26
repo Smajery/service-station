@@ -1,0 +1,30 @@
+.suppliersItem {
+    padding: 5px 20px;
+    display: flex;
+    gap: 0 20px;
+    border-bottom: 1px solid black;
+}
+
+.suppliersItem  > .name {
+    width: 150px;
+}
+
+.suppliersItem  > .phone {
+    width: 100px;
+}
+
+.suppliersItem  > .account {
+    width: 100px;
+}
+
+.suppliersItem  > .quantityReceipts {
+    width: 100px;
+}
+
+.suppliersItem  > .quantityReceiptsFuel {
+    width: 100px;
+}
+
+.suppliersItem  > .sum {
+    width: 150px;
+}

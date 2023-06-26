@@ -1,9 +1,8 @@
+import Suppliers from 'components/suppliers/Suppliers';
 
 const SuppliersPage = () => {
     return (
-        <div>
-            Suppliers
-        </div>
+        <Suppliers />
     );
 };
 

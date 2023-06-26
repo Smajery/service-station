@@ -1,8 +1,8 @@
+import GasStation from 'components/gas-station/GasStation';
+
 const GasStationPage = () => {
     return (
-        <div>
-            Refueling
-        </div>
+        <GasStation  />
     );
 };
 

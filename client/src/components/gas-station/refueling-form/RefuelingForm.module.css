@@ -1,0 +1,225 @@
+.refuelingForm {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    border-bottom-width: 0;
+    background-color: #FFFFFF;
+}
+
+.basketContainer {
+    padding: 10px 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.basket {
+    display: flex;
+    align-items: center;
+    gap: 0 20px;
+}
+
+.basket p {
+    font-weight: bold;
+}
+
+.purchasesContainer {
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px 0;
+}
+
+.basket > .btnContainer {
+    display: flex;
+    gap: 0 20px;
+}
+
+.basket > .btnContainer > button {
+    width: 100px;
+    height: 25px;
+}
+
+.purchasesTitle {
+    padding-bottom: 5px;
+    display: flex;
+    gap: 0 20px;
+}
+
+.purchasesTitle > div {
+    display: flex;
+}
+
+.purchasesTitle > div > p {
+    font-weight: bold;
+}
+
+.purchasesTitle > .name {
+    width: 100px;
+}
+
+.purchasesTitle > .price {
+    width: 100px;
+}
+
+.purchasesTitle > .quantity {
+    width: 100px;
+}
+
+.purchase {
+    display: flex;
+    align-items: center;
+    gap: 0 20px;
+}
+
+.purchase > div {
+    display: flex;
+}
+
+.purchase > .name {
+    width: 100px;
+}
+
+.purchase > .price {
+    width: 100px;
+}
+
+.purchase > .quantity {
+    width: 100px;
+}
+
+.cancelPurchaseBtn {
+    width: 100px;
+    height: 25px;
+}
+
+.selectContainer {
+    padding: 10px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px 0;
+    border-bottom: 1px solid black;
+}
+
+.selectContainer label {
+    font-weight: bold;
+}
+
+.refuelingForm select {
+    width: 320px;
+    border-style: inset;
+    border-width: 2px;
+}
+
+.refuelingForm select.error {
+    border-color: #cf1d00;
+}
+
+.gasListContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.gasInfoTitle {
+    padding: 0 20px;
+    display: flex;
+    gap: 0 20px;
+    border-bottom: 1px solid black;
+}
+
+.gasInfoTitle > div {
+    padding: 10px 0;
+    display: flex;
+}
+
+.gasInfoTitle p {
+    font-weight: bold;
+}
+
+.gasInfoTitle > .name {
+    width: 100px;
+}
+
+.gasInfoTitle > .available {
+    width: 100px;
+    border-right: 1px solid black;
+}
+
+.gasInfoTitle > .quantity {
+    width: 100px;
+}
+
+.gasInfoTitle > .price {
+    width: 100px;
+}
+
+.gasInfoTitle > .button {
+    width: 85px;
+}
+
+.gasInfoContainer {
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid black;
+    gap: 0 20px;
+}
+
+.gasInfoContainer > .name {
+    padding: 5px 0;
+    display: flex;
+    width: 100px;
+}
+
+.gasInfoContainer > .available {
+    padding: 5px 0;
+    display: flex;
+    width: 100px;
+    border-right: 1px solid black;
+}
+
+.gasInfoContainer > .quantity {
+    width: 100px;
+}
+
+.gasInfoContainer > .buttonContainer {
+    width: 85px;
+}
+
+.buyingGasContainer {
+    display: flex;
+    align-items: center;
+    gap: 0 20px;
+}
+
+.buyingGasContainer input {
+    padding: 0 2px;
+}
+
+.buyingGasContainer input.error {
+    border-color: #cf1d00;
+}
+
+.buyingGasContainer > .inputPrice {
+    width: 100px;
+}
+
+.buyingGasContainer > .inputQuantity {
+    width: 100px;
+}
+
+.buyingGasContainer > .btnContainer {
+     width: 85px;
+     display: flex;
+     justify-content: space-between;
+ }
+
+.confirmBtn,
+.cancelBtn {
+    width: 35px;
+    height: 25px;
+}
+
+.addGasBtn {
+    width: 85px;
+    height: 25px;
+}

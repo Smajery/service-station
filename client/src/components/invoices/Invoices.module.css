@@ -1,0 +1,66 @@
+.invoicesPage {
+    width: 100%;
+    display: flex;
+}
+
+.invoicesPage > .content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.invoicesContainer {
+    display: flex;
+    flex-direction: column;
+    background-color: #FFFFFF;
+    border: 1px solid black;
+    border-bottom-width: 0;
+}
+
+.invoicesTitle {
+    padding: 10px 20px;
+    display: flex;
+    gap: 0 20px;
+    border-bottom: 1px solid black;
+}
+
+.invoicesTitle > div {
+    display: flex;
+}
+
+.invoicesTitle > div > p {
+    font-weight: bold;
+}
+
+.invoicesTitle > .supplier {
+    width: 150px;
+}
+
+.invoicesTitle > .fal {
+    width: 100px;
+}
+
+.invoicesTitle > .price {
+    width: 100px;
+}
+
+.invoicesTitle > .quantity {
+    width: 100px;
+}
+
+.invoicesTitle > .address {
+    width: 200px;
+}
+
+.invoicesTitle > .receiver {
+    width: 250px;
+}
+
+.invoicesForm {
+    padding: 5px 20px;
+    display: flex;
+    align-items: center;
+    gap: 0 20px;
+    border-bottom: 1px solid black
+}

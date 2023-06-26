@@ -1,0 +1,104 @@
+.suppliersPage {
+    width: 100%;
+    display: flex;
+}
+
+.suppliersPage > .content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.suppliersContainer {
+    display: flex;
+    flex-direction: column;
+    background-color: #FFFFFF;
+    border: 1px solid black;
+    border-bottom-width: 0;
+}
+
+.suppliersTitle {
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    gap: 0 20px;
+    border-bottom: 1px solid black;
+}
+
+.suppliersTitle > div {
+    display: flex;
+}
+
+.suppliersTitle > div > p {
+    font-weight: bold;
+}
+
+.suppliersTitle > .name {
+    width: 150px;
+}
+
+.suppliersTitle > .phone {
+    width: 100px;
+}
+
+.suppliersTitle > .account {
+    width: 100px;
+}
+
+.suppliersTitle > .quantityReceipts {
+    width: 100px;
+}
+
+.suppliersTitle > .quantityReceiptsFuel {
+    width: 100px;
+}
+
+.suppliersTitle > .sum {
+    width: 150px;
+}
+
+.suppliersForm {
+    padding: 5px 20px;
+    display: flex;
+    align-items: center;
+    gap: 0 20px;
+    border-bottom: 1px solid black;
+}
+
+.suppliersForm input {
+    padding: 0 2px;
+}
+
+.suppliersForm input.error {
+    border-color: #cf1d00;
+}
+
+.suppliersForm > .inputName {
+    width: 150px;
+}
+
+.suppliersForm > .inputPhone {
+    width: 100px;
+}
+
+.suppliersForm > .inputAccount {
+    width: 100px;
+}
+
+.btnContainer {
+    width: 85px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.confirmBtn,
+.cancelBtn {
+    width: 35px;
+    height: 25px;
+}
+
+.addGasBtn {
+    width: 85px;
+    height: 25px;
+}

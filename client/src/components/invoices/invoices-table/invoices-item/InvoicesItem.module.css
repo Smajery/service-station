@@ -1,0 +1,30 @@
+.invoicesItem {
+    padding: 5px 20px;
+    display: flex;
+    gap: 0 20px;
+    border-bottom: 1px solid black;
+}
+
+.invoicesItem > .supplier {
+    width: 150px;
+}
+
+.invoicesItem > .fal {
+    width: 100px;
+}
+
+.invoicesItem > .price {
+    width: 100px;
+}
+
+.invoicesItem > .quantity {
+    width: 100px;
+}
+
+.invoicesItem > .address {
+    width: 200px;
+}
+
+.invoicesItem > .receiver {
+    width: 250px;
+}

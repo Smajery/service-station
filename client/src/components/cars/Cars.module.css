@@ -1,0 +1,82 @@
+.carsPage {
+    width: 100%;
+    display: flex;
+}
+
+.carsPage > .content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.topConsumersContainer {
+    display: flex;
+    flex-direction: column;
+    background-color: #FFFFFF;
+    border: 1px solid black;
+}
+
+.topConsumersTitle {
+    padding: 10px 20px;
+    display: flex;
+    gap: 0 20px;
+}
+
+.topConsumersTitle > div {
+    display: flex;
+}
+
+.topConsumersTitle > div > p {
+    font-weight: bold;
+}
+
+.topConsumersTitle > .number {
+    width: 20px;
+}
+
+.topConsumersTitle > .type {
+    width: 100px;
+}
+
+.topConsumersTitle > .name {
+    width: 100px;
+}
+
+.topConsumersTitle > .license {
+    width: 120px;
+}
+
+.topConsumersTitle > .quantity {
+    width: 100px;
+}
+
+.topConsumer {
+    padding: 5px 20px;
+    display: flex;
+    gap: 0 20px;
+}
+
+.topConsumer.colored {
+    background-color: #e8e8e8;
+}
+
+.topConsumer > .number {
+    width: 20px;
+}
+
+.topConsumer > .type {
+    width: 100px;
+}
+
+.topConsumer > .name {
+    width: 100px;
+}
+
+.topConsumer > .license {
+    width: 120px;
+}
+
+.topConsumer > .quantity {
+    width: 100px;
+}
