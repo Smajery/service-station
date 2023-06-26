@@ -23,7 +23,8 @@ const GasStation = () => {
     useEffect(() => {
         getAllUser()
             .then(data => {
-                setUsers(data)
+                const attendantUsers = data.filter((data) => data.role === 'ATTENDANT')
+                setUsers(attendantUsers)
             })
             .catch(e => {
                 console.error(e)
