@@ -21,7 +21,6 @@ const RoadMap = () => {
     const maxDate = new Date();
 
     const [name, setName] = useState('');
-    const [fullName, setFullName] = useState('');
     const [dateValue, setDateValue] = useState(Date.now);
     const [carType, setCarType] = useState('');
     const [address, setAddress] = useState('');
@@ -55,9 +54,7 @@ const RoadMap = () => {
 
     const handleSelectChange = (e) => {
         const selectedValue = e.target.value;
-        const [userId, userName] = selectedValue.split('-');
-        setName(userId);
-        setFullName(userName);
+        setName(selectedValue);
     };
 
     const handleSubmit = (e) => {
@@ -82,8 +79,11 @@ const RoadMap = () => {
 
         if (nameErrorText === '' && carTypeErrorText === '' && addressErrorText === '') {
             const formattedDate = getFormattedDate(dateValue);
+            const [userId, userName] = name.split('-');
+            const nameId = userId
+            const fullName = userName;
 
-            addRoadMap(name, carType, formattedDate, address)
+            addRoadMap(nameId, carType, formattedDate, address)
                 .then(() => {
                     const newRoadMap = {
                         id: Date.now,

@@ -6,7 +6,6 @@ import gasStationImg from 'static/icons/gas-station.svg';
 import carsImg from 'static/icons/cars.svg';
 import invoicesImg from 'static/icons/invoices.svg';
 import suppliersImg from 'static/icons/suppliers.svg';
-import expensesImg from 'static/icons/expenses.svg';
 
 export const adminPaths = [
     {title: 'ПММ', path: '/gas', icon: gasImg},
@@ -18,7 +17,7 @@ export const adminPaths = [
 export const attendantPaths = [
     {title: 'Заправка', path: '/gas-station', icon: gasStationImg},
     {title: 'Залишки ПММ', path: '/gas', icon: gasImg},
-    {title: 'Покупці палива', path: '/cars', icon: carsImg},
+    {title: 'Витрати', path: '/cars', icon: carsImg},
 ];
 
 export const managerPaths = [
@@ -28,5 +27,4 @@ export const managerPaths = [
 
 export const driverPaths = [
     {title: 'Дорожні карти', path: '/road-map', icon: roadMapImg},
-    {title: 'Витрати', path: '/expenses', icon: expensesImg},
 ];

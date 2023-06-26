@@ -16,7 +16,6 @@ const Statistics = () => {
         getStatistics()
             .then(data => {
                 setStatistics(data[0]);
-                console.log(data[0]);
             })
             .catch(e => {
                 console.error(e);

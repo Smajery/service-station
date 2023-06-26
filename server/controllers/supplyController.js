@@ -35,6 +35,26 @@ class SupplyController {
             })
     }
 
+    async getAllStations(req, res, next) {
+        managerPool.query('SELECT * FROM stations',
+            (error, results) => {
+                if (error) {
+                    return next(ApiError.badRequest(error.message))
+                }
+                res.json(results.rows)
+            })
+    }
+
+    async getAllInvoices(req, res, next) {
+        managerPool.query('SELECT * FROM invoices',
+            (error, results) => {
+                if (error) {
+                    return next(ApiError.badRequest(error.message))
+                }
+                res.json(results.rows)
+            })
+    }
+
     async getRankSuppliers(req, res, next) {
         managerPool.query('SELECT * FROM suppliers_rank_view',
              (error, results) => {
