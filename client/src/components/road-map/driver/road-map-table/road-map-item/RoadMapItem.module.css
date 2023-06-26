@@ -1,0 +1,56 @@
+.roadMapItemContainer {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid black;
+}
+
+.roadMapItemContainer.show {
+    border-top: 1px solid black;
+    border-bottom-width: 2px;
+}
+
+.roadMapItem {
+    display: flex;
+    align-items: center;
+    gap: 0 20px;
+}
+
+.roadMapItem > div {
+    padding: 5px 20px;
+    display: flex;
+}
+
+.roadMapItem > .owner {
+    width: 300px;
+}
+
+.roadMapItem > .carType {
+    width: 150px;
+}
+
+.roadMapItem > .date {
+    width: 130px;
+}
+
+.roadMapItem > .address {
+    width: 200px;
+}
+
+.showConsumptionBtn {
+    width: 100px;
+    height: 25px;
+}
+
+.consumptionContainer {
+    padding: 5px 20px;
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid black;
+}
+
+.consumption {
+    padding: 5px 0;
+    display: flex;
+    gap: 0 20px
+}
+

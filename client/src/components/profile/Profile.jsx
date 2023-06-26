@@ -11,7 +11,11 @@ const Profile = () => {
             <div className={styles.content}>
                 {(Object.keys(user).length !== 0 && user.role !== null) ? (
                     <p>
-                        {user.name}, ваша роль: {user.role}
+                        {user.role !== 'DRIVER' ? (
+                            `${user.name}, ваша роль: ${user.role}`
+                            ) : (
+                            `Ласкаво просимо, ${user.name}`
+                        )}
                     </p>
                 ) : (
                     <p>

@@ -128,6 +128,11 @@
     width: 200px;
 }
 
+.inputDateContainer div {
+    display: flex;
+    align-items: center;
+}
+
 .inputDateContainer input {
     width: 130px;
 }

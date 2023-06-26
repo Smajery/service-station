@@ -1,7 +1,6 @@
 import {
     ROUTE_CARS,
     ROUTE_EMPLOYEES,
-    ROUTE_EXPENSES,
     ROUTE_GAS,
     ROUTE_INVOICES,
     ROUTE_GAS_STATION,
@@ -21,7 +20,6 @@ import StatisticsPage from 'pages/statistics/Statistics';
 import CarsPage from 'pages/cars/Cars';
 import InvoicesPage from 'pages/invoices/Invoices';
 import SuppliersPage from 'pages/suppliers/Suppliers';
-import ExpensesPage from 'pages/expenses/Expenses';
 import SignInPage from 'pages/sign-in/SignIn';
 import SignUpPage from 'pages/sign-up/SignUp';
 import ErrorPage from 'pages/error/Error';
@@ -59,8 +57,7 @@ export const managerRoutes = [
 export const driverRoutes = [
     {path: ROUTE_HOME, component: ProfilePage},
     {path: ROUTE_PROFILE, component: ProfilePage},
-    {path: ROUTE_ROAD_MAP, component: GasPage},
-    {path: ROUTE_EXPENSES, component: ExpensesPage},
+    {path: ROUTE_ROAD_MAP, component: RoadMapPage},
     {path: ROUTE_ERROR, component: ErrorPage}
 ];
 

@@ -64,3 +64,45 @@
     gap: 0 20px;
     border-bottom: 1px solid black
 }
+
+.invoicesForm select {
+    border-style: inset;
+    border-width: 2px;
+}
+
+.invoicesForm select.error {
+    border-color: #cf1d00;
+}
+
+.invoicesForm > .invoice {
+    width: 340px;
+}
+
+.invoicesForm > .user {
+    width: 150px;
+}
+
+.invoicesForm > .station {
+    width: 200px;
+}
+
+.invoicesForm > .supplier {
+    width: 150px;
+}
+
+.btnContainer {
+    width: 85px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.confirmBtn,
+.cancelBtn {
+    width: 35px;
+    height: 25px;
+}
+
+.addReceiptBtn {
+    width: 85px;
+    height: 25px;
+}
