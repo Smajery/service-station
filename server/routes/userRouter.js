@@ -9,7 +9,7 @@ router.post('/registration', userController.registration)
 router.post('/login', userController.login)
 router.get('/auth', authMiddleware, userController.check)
 router.post('/', checkRole(['ADMIN']), userController.updateRole)
-router.get('/', checkRole(['ADMIN']), userController.getAll)
+router.get('/', checkRole(['ADMIN', 'ATTENDANT']), userController.getAll)
 
 
 

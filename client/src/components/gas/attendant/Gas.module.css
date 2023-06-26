@@ -1,0 +1,43 @@
+.gasPage {
+    width: 100%;
+    display: flex;
+}
+
+.gasPage > .content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.gasTableContainer {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    border-bottom-width: 0;
+    background-color: #FFFFFF;
+}
+
+.gasTableTitle {
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid black;
+    gap: 0 20px;
+}
+
+.gasTableTitle p {
+    font-weight: bold;
+}
+
+.gasTableTitle > .name {
+    width: 100px;
+}
+
+.gasTableTitle > .quantity {
+    width: 100px;
+}
+
+.gasTableTitle > .type {
+    width: 100px;
+}

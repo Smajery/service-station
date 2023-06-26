@@ -1,8 +1,8 @@
+import Invoices from 'components/invoices/Invoices';
+
 const InvoicesPage = () => {
     return (
-        <div>
-            Invoices
-        </div>
+        <Invoices />
     );
 };
 

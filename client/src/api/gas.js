@@ -9,3 +9,8 @@ export const addGas = async (name, type) => {
     const {data} = await $authHost.post('fal/', {name, type})
     return data
 }
+
+export const getStock = async () => {
+    const {data} = await $authHost.get('fal/stock')
+    return data
+}

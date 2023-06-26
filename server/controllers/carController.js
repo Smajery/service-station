@@ -9,7 +9,6 @@ class CarController {
             const { rows } = await attendantPool.query(
                 'INSERT INTO refuelings(user_id, trip_id, date) VALUES ($1, $2, $3) RETURNING id;',
                 [user_id, trip_id, date]);
-
             if (rows.length > 0) {
                 refuel_id = rows[0].id;
             }
