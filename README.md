@@ -1,6 +1,6 @@
-# My fourth project.
+# ServiceStation
 
-This single page app was created to order for a university course work. The purpose of this project was to create an information system and develop an application for a service station.  
+My fourth project. This is a single page app was created to order for a university course work. The purpose of this project was to create an information system and develop an application for a service station.  
 
 In the development of the backend it was allowed to use only "pure" SQL-queries to the database.
 
